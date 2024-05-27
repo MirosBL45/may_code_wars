@@ -67,3 +67,56 @@ function findOdd(arr) {
 
 console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
 console.log('#############################################');
+
+
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+// Examples
+
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+console.log('4. assignment');
+console.log('Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched');
+
+function pigIt(str) {
+    return str.split(' ').map(word => {
+        if (/^[a-zA-Z]+$/.test(word)) {
+            return word.slice(1) + word[0] + 'ay'
+        }
+        return word;
+    }).join(' ');
+}
+
+console.log(pigIt('Hello world !'));
+console.log('#############################################');
+
+
+// Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
+console.log('5. assignment');
+console.log('Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix');
+
+function determinant(matrix) {
+    const n = matrix.length;
+
+
+    if (n === 1) {
+        return matrix[0][0];
+    }
+
+
+    if (n === 2) {
+        return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+    }
+
+
+    let det = 0;
+    for (let col = 0; col < n; col++) {
+        const minor = matrix.slice(1).map(row => row.filter((_, j) => j !== col));
+        const sign = col % 2 === 0 ? 1 : -1;
+        det += sign * matrix[0][col] * determinant(minor);
+    }
+
+    return det;
+}
+
+console.log(determinant([[2, 5, 3], [1, -2, -1], [1, 3, 4]]));
+console.log('#############################################');

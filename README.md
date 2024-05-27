@@ -1,1 +1,1 @@
-Some code practice form codewars
+Some code practice from codewars
