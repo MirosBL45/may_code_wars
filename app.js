@@ -11,7 +11,7 @@ function solution(string) {
 }
 
 console.log(solution('myNameIsMiroslavJovic'));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 
 // In this kata you are required to, given a string, replace every letter with its position in the alphabet.
@@ -37,7 +37,7 @@ function alphabetPosition(text) {
 }
 
 console.log(alphabetPosition("The sunset sets at twelve o' clock."));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 
 // Given an array of integers, find the one that appears an odd number of times.
@@ -66,7 +66,7 @@ function findOdd(arr) {
 }
 
 console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 
 // Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
@@ -87,7 +87,7 @@ function pigIt(str) {
 }
 
 console.log(pigIt('Hello world !'));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 
 // Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
@@ -119,7 +119,7 @@ function determinant(matrix) {
 }
 
 console.log(determinant([[2, 5, 3], [1, -2, -1], [1, 3, 4]]));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 // Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
 console.log('6. assignment');
@@ -145,7 +145,7 @@ function atomicNumber(electrons) {
 }
 
 console.log(atomicNumber(28));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 // Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
 console.log('7. assignment');
@@ -163,7 +163,7 @@ function longestSlideDown(pyramid) {
 }
 
 console.log(longestSlideDown([[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]]));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 // Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
 console.log('8. assignment');
@@ -202,7 +202,7 @@ function listSquared(m, n) {
 }
 
 console.log(listSquared(42, 250));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 // Mexican Wave.
 console.log('9. assignment');
@@ -224,7 +224,7 @@ function wave(str) {
 }
 
 console.log(wave("wave"));
-console.log('#############################################');
+console.log('#######################------#######################');
 
 // returns an array of the top-3 most occurring words, in descending order of the number of occurrences.
 console.log('10. assignment');
@@ -248,4 +248,44 @@ function topThreeWords(text) {
 }
 
 console.log(topThreeWords("In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing. An olla of rather more beef than mutton, a salad on most nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra on Sundays, made away with three-quarters of his income."));
-console.log('#############################################');
+console.log('#######################------#######################');
+
+// Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
+console.log('11. assignment');
+console.log('Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise');
+
+function snail(array) {
+    let result = [];
+
+    while (array.length) {
+        result = result.concat(array.shift());
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].length) {
+                result.push(array[i].pop());
+            }
+        }
+
+        if (array.length) {
+            result = result.concat(array.pop().reverse());
+        }
+
+        for (let i = array.length - 1; i >= 0; i--) {
+            if (array[i].length) {
+                result.push(array[i].shift());
+            }
+        }
+    }
+
+    return result;
+}
+
+console.log(snail([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+console.log('#######################------#######################');
+
+//  create a NxN spiral with a given size.
+console.log('12. assignment');
+console.log(' create a NxN spiral with a given size');
+
+
+console.log('#######################------#######################');
